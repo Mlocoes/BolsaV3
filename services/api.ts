@@ -1,9 +1,8 @@
-
 import type { User, Portfolio, Position, MonthlyResult, Asset, Operation } from '../types';
 
 // Mock data
-const MOCK_USER: User = { id: '1', username: 'demo', email: 'demo@bolsav2.com', is_admin: true, active: true };
-const MOCK_ADMIN_USER: User = { id: '2', username: 'admin', email: 'admin@bolsav2.com', is_admin: true, active: true };
+const MOCK_USER: User = { id: '1', username: 'demo', email: 'demo@bolsav3.com', is_admin: true, active: true };
+const MOCK_ADMIN_USER: User = { id: '2', username: 'admin', email: 'admin@bolsav3.com', is_admin: true, active: true };
 
 const MOCK_PORTFOLIOS: Portfolio[] = [
   { id: 'p1', name: 'Tech Growth', description: 'Portfolio focused on high-growth technology stocks.' },

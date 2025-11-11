@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { MonthlyResult } from '../types';
 
@@ -9,7 +8,8 @@ interface ChartMonthlyProps {
 // Faking recharts components for demonstration as they are not available in this environment.
 // In a real Vite project with dependencies, you would `import { ... } from 'recharts';`
 const ResponsiveContainer: React.FC<{children: React.ReactNode}> = ({children}) => <div className="w-full h-64 md:h-80">{children}</div>;
-const BarChart: React.FC<{children: React.ReactNode, data: any[]}> = ({children, data}) => <div className="text-center p-4 border border-dashed border-gray-600 rounded-lg bg-gray-800">Chart Placeholder. Data points: {data.length}</div>;
+// FIX: Allow additional props on the mock BarChart component to fix type error with 'margin'.
+const BarChart: React.FC<{children: React.ReactNode, data: any[], [key: string]: any}> = ({children, data}) => <div className="text-center p-4 border border-dashed border-gray-600 rounded-lg bg-gray-800">Chart Placeholder. Data points: {data.length}</div>;
 const XAxis: React.FC<any> = () => null;
 const YAxis: React.FC<any> = () => null;
 const Tooltip: React.FC<any> = () => null;

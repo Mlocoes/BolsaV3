@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -30,7 +29,7 @@ const Login: React.FC = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-900">
       <div className="w-full max-w-md p-8 space-y-8 bg-gray-800 rounded-xl shadow-lg">
-        <h2 className="text-3xl font-bold text-center text-white">BolsaV2 Login</h2>
+        <h2 className="text-3xl font-bold text-center text-white">BolsaV3 Login</h2>
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="username" className="text-sm font-medium text-gray-300">

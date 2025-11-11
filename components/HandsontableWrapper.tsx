@@ -1,10 +1,10 @@
-
 import React, { useEffect, useRef } from 'react';
 // Handsontable is loaded from a CDN and available on the window object
 declare const Handsontable: any;
 
 interface HandsontableWrapperProps {
-  data: any[][];
+  // FIX: Changed data type from any[][] to any[] to allow passing an array of objects.
+  data: any[];
   colHeaders: string[];
   columns: any[];
   readOnly?: boolean;
