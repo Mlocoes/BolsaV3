@@ -11,6 +11,7 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",  # Frontend
     "http://localhost:8080",  # Nginx
+    "http://localhost:5173",  # Vite Local Dev
 ]
 
 app.add_middleware(

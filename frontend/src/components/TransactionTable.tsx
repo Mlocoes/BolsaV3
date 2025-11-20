@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { HotTable } from '@handsontable/react';
 import { registerAllModules } from 'handsontable/registry';
 import 'handsontable/dist/handsontable.full.min.css';
-import api from '../../services/api';
+import api from '../services/api';
 
 registerAllModules();
 

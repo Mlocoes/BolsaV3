@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
-import { Plus, TrendingUp, TrendingDown, DollarSign } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 interface Portfolio {
     id: number;

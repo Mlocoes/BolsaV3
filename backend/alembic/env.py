@@ -9,7 +9,7 @@ from alembic import context
 from app.core.config import settings
 from app.db.base import Base
 # Importar todos los modelos aquí para que Alembic los detecte
-# from app.models.user import User  # Ejemplo
+from app.models import User, Portfolio, Asset, Transaction
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

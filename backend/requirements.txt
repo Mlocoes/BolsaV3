@@ -8,6 +8,7 @@ pydantic-settings
 email-validator
 python-jose[cryptography]
 passlib[bcrypt]
+bcrypt==3.2.2
 celery
 redis
 requests
