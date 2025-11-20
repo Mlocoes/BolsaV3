@@ -83,4 +83,3 @@ const PortfolioDetail: React.FC = () => {
 };
 
 export default PortfolioDetail;
-```
