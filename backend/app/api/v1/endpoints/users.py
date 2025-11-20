@@ -1,0 +1,49 @@
+from typing import Any, List
+
+from fastapi import APIRouter, Body, Depends, HTTPException
+from fastapi.encoders import jsonable_encoder
+from sqlalchemy.orm import Session
+
+from app import models, schemas
+from app.api import deps
+from app.core import security
+from app.db.session import get_db
+
+router = APIRouter()
+
+@router.post("/", response_model=schemas.User)
+def create_user(
+    *,
+    db: Session = Depends(get_db),
+    user_in: schemas.UserCreate,
+) -> Any:
+    """
+    Crea un nuevo usuario.
+    """
+    user = db.query(models.User).filter(models.User.email == user_in.email).first()
+    if user:
+        raise HTTPException(
+            status_code=400,
+            detail="Ya existe un usuario con este correo en el sistema.",
+        )
+    
+    hashed_password = security.get_password_hash(user_in.password)
+    db_obj = models.User(
+        email=user_in.email,
+        hashed_password=hashed_password,
+        full_name=user_in.full_name,
+        is_superuser=user_in.is_superuser,
+    )
+    db.add(db_obj)
+    db.commit()
+    db.refresh(db_obj)
+    return db_obj
+
+@router.get("/me", response_model=schemas.User)
+def read_user_me(
+    current_user: models.User = Depends(deps.get_current_active_user),
+) -> Any:
+    """
+    Obtiene el usuario actual.
+    """
+    return current_user
